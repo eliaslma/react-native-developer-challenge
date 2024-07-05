@@ -18,19 +18,21 @@ export function AppTabRoutes() {
     return (
         <Tab.Navigator
             screenOptions={{
+                tabBarBadgeStyle: { backgroundColor: '#0A0B13'},
                 headerShown: false,
                 tabBarShowLabel: false,
-                tabBarActiveTintColor: '#6D6DFA',
+                tabBarActiveTintColor: '#FFFFFF',
+                tabBarStyle: { backgroundColor: '#0A0B13', borderTopWidth: 0}
             }}>
             <Tab.Screen name="HomeRoutes" component={HomeRoutes}
                 options={{
                     tabBarIcon: ({ color }: any) =>
-                        <HomeAppLogo fill={color} width={RFValue(36)} height={RFValue(36)} />
+                        <HomeAppLogo fill={color} width={RFValue(24)} height={RFValue(24)} />
                 }} />
             <Tab.Screen name="ProfileScreen" component={ProfileScreen}
                 options={{
                     tabBarIcon: ({ color }: any) =>
-                        <AccountCircle fill={color} width={RFValue(36)} height={RFValue(36)} />
+                        <AccountCircle fill={color} width={RFValue(24)} height={RFValue(24)} />
                 }} />
         </Tab.Navigator>
     );
