@@ -103,7 +103,7 @@ export function HomeScreen() {
                 </SearchWrapper>
             </SafeAreaView>
             <FeaturedMoviesWrapper>
-                <MovieTitle>Filme em </MovieTitle>
+                <MovieTitle>Filmes em </MovieTitle>
                 <FeaturedMovieTitle>Destaque</FeaturedMovieTitle>
             </FeaturedMoviesWrapper>
             {movies &&
