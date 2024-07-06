@@ -24,7 +24,7 @@ const genres: { [key: number]: string } = {
 
 const API_KEY = process.env.EXPO_PUBLIC_MOVIE_API_KEY;
 
-const API_URL = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&sort_by=popularity.desc`;
+const API_URL = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=pt-BR&sort_by=popularity.desc`;
 
 const getImagePath = (path: string) => `https://image.tmdb.org/t/p/w440_and_h660_face${path}`;
 
