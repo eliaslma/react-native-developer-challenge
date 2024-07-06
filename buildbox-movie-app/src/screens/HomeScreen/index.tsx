@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { MovieType } from '../../api/movieService';
 import { MovieCard } from '../../components/MovieCard';
-import { StatusBar } from 'expo-status-bar';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { getMovies } from '../../api/movieService';
+import { SearchBar } from '../../components/SearchBar';
+import { Filters } from '../../components/Filters';
 
 import {
     View,
@@ -12,8 +15,18 @@ import {
 
 import {
     Container,
+    Header,
+    WelcomeWrapper,
+    UserWelcomeWrapper,
+    WelcomeTitle,
+    LastAdditionsTitle,
+    CustomerName,
+    SearchWrapper,
+    FeaturedMoviesWrapper,
+    MovieTitle,
+    FeaturedMovieTitle,
+    Avatar
 } from './styles';
-import { getMovies } from '../../api/movieService';
 
 const { width } = Dimensions.get('window');
 const SPACING = 10;
@@ -71,7 +84,28 @@ export function HomeScreen() {
 
     return (
         <Container>
-            <StatusBar style='light' />
+            <SafeAreaView edges={['top']}>
+                <Header>
+                    <WelcomeWrapper>
+                        <UserWelcomeWrapper>
+                            <WelcomeTitle>Olá</WelcomeTitle>
+                            <CustomerName>Elias!</CustomerName>
+                        </UserWelcomeWrapper>
+                        <LastAdditionsTitle>Confira os últimos lançamentos</LastAdditionsTitle>
+                    </WelcomeWrapper>
+                    <Avatar source={{
+                        uri: 'https://avatars.githubusercontent.com/u/70176310?v=4',
+                    }} />
+                </Header>
+                <SearchWrapper>
+                    <SearchBar />
+                    <Filters/>
+                </SearchWrapper>
+            </SafeAreaView>
+            <FeaturedMoviesWrapper>
+                <MovieTitle>Filme em </MovieTitle>
+                <FeaturedMovieTitle>Destaque</FeaturedMovieTitle>
+            </FeaturedMoviesWrapper>
             {movies &&
                 <Animated.FlatList
                     style={{ flex: 1 }}
@@ -82,7 +116,7 @@ export function HomeScreen() {
                     bounces={false}
                     decelerationRate={Platform.OS === 'ios' ? 0 : 0.98}
                     renderToHardwareTextureAndroid
-                    contentContainerStyle={{ alignItems: 'center' }}
+                    contentContainerStyle={{ alignItems: 'flex-start' }}
                     snapToInterval={ITEM_SIZE}
                     snapToAlignment='start'
                     onScroll={Animated.event(
