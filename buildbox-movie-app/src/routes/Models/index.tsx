@@ -1,8 +1,9 @@
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { MovieType } from "../../api/movieService";
 
 export type propsNavigatorStack = {
     HomeScreen: any;
-    MovieDetailScreen: any;
+    MovieDetailScreen: MovieType;
     ProfileScreen: any;
 }
 

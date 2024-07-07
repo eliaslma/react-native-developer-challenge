@@ -43,7 +43,7 @@ export const CustomerName = styled.Text`
 export const Avatar = styled.Image`
     width: ${RFValue(50)}px;
     height: ${RFValue(50)}px;
-    border-radius: 50%;
+    border-radius: ${RFValue(25)}px;
 `;
 
 export const SearchWrapper = styled.View`

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
 import { MovieType } from '../../api/movieService';
 import { MovieCard } from '../../components/MovieCard';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -27,6 +28,7 @@ import {
     FeaturedMovieTitle,
     Avatar
 } from './styles';
+import { propsNavigationStack } from '../../routes/Models';
 
 const { width } = Dimensions.get('window');
 const SPACING = 10;
@@ -36,8 +38,12 @@ const EMPTY_ITEM_SIZE = (width - ITEM_SIZE) / 2;
 export function HomeScreen() {
 
     const [movies, setMovies] = useState<MovieType[]>([]);
-
     const scrollX = React.useRef(new Animated.Value(0)).current;
+    const navigation = useNavigation<propsNavigationStack>();
+
+    const handleShowMovieDetailScreen = (movieData: MovieType) => {
+        navigation.navigate('MovieDetailScreen', movieData);
+    }
 
     const renderItem = (item: any, index: number) => {
 
@@ -65,7 +71,10 @@ export function HomeScreen() {
                         backgroundColor: 'white',
                         borderRadius: 34,
                     }}>
-                    <MovieCard posterPath={item.poster_path} />
+                    <MovieCard
+                        movieData={item}
+                        handleShowMovieDetailScreen={() => handleShowMovieDetailScreen(item)}
+                    />
                 </Animated.View>
             </View>
         );
