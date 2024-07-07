@@ -1,5 +1,14 @@
 # react-native-developer-challenge
 
+## Preview do Resultado! 🔥:
+
+![Captura de Tela 2024-07-07 às 14 22 55](https://github.com/eliaslma/react-native-developer-challenge/assets/70176310/4cd6b2da-45ec-4e54-a2d7-abc8134bc7d1)
+
+## Video Preview:
+
+https://github.com/eliaslma/react-native-developer-challenge/assets/70176310/937b726e-f5ee-4cb7-a3ce-9a60a5068807
+
+
 E ai Candidato!
 
 Este desafio consiste em identificar seu nível de habilidade com desenvolvimento em React Native, portanto, esperamos que você tente resolve-lo usando toda a sua capacidade e conhecimento da tecnologia. 
