@@ -1,6 +1,7 @@
 import React from 'react';
 import { Image } from 'react-native';
 import { StyleSheet } from 'react-native';
+import { MovieType } from '../../api/movieService';
 
 import {
     Container,
@@ -12,11 +13,11 @@ const { width } = Dimensions.get('window');
 const ITEM_SIZE = Platform.OS === 'ios' ? width * 0.60 : width * 0.74;
 
 
-export function MovieCard({posterPath}: { posterPath: string}){
+export function MovieCard({ movieData, handleShowMovieDetailScreen }: { movieData: MovieType, handleShowMovieDetailScreen: () => void }) {
 
-    return(
-        <Container activeOpacity={.8}>
-            <Image style={styles.posterImage} source={{ uri: posterPath}}/>
+    return (
+        <Container activeOpacity={.8} onPress={handleShowMovieDetailScreen}>
+            <Image style={styles.posterImage} source={{ uri: movieData?.poster_path }} />
         </Container>
     );
 }
