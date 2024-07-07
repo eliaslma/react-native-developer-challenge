@@ -5,10 +5,10 @@ import {
     Container
 } from './styles';
 
-export function Loader(){
+export function Loader({color}: {color: string}){
     return(
         <Container>
-            <ActivityIndicator size='large' color="#FFFFFF"/>
+            <ActivityIndicator size='large' color={color}/>
         </Container>
     );
 }
